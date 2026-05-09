@@ -16,9 +16,9 @@ export interface ResearchData {
 
 export const research: ResearchData = {
   title: "Developing an Agentic AI Vulnerabilities Framework",
-  subtitle: "Senior Capstone Research Project",
+  subtitle: "Senior Research Project",
   university: "University of Bahrain",
-  year: "2025",
+  year: "2026",
   // TODO: Replace this placeholder with the actual research abstract
   abstract:
     "Research abstract will be added here — PDF content coming soon. This section will contain a comprehensive overview of the research methodology, findings, and contributions to the field of agentic AI security.",
