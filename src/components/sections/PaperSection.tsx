@@ -5,8 +5,6 @@ import { useRef } from "react";
 import { FileText, ExternalLink } from "lucide-react";
 import { research } from "@/data/research";
 
-// ─── Change this to true once /public/research.pdf is present ─────────────────
-// TODO: Set PDF_AVAILABLE to true and re-deploy once you drop research.pdf into /public/
 const PDF_AVAILABLE = false;
 
 export default function PaperSection() {
@@ -107,15 +105,8 @@ export default function PaperSection() {
                 >
                   Research Paper Coming Soon
                 </h3>
-                <p className="text-slate-500 max-w-md mb-2">
+                <p className="text-slate-500 max-w-md">
                   The full research document will be embedded here once finalized.
-                </p>
-                <p className="text-xs text-slate-600 font-mono bg-slate-800/50 border border-slate-700/50 rounded-lg px-4 py-2.5 mt-2">
-                  Drop{" "}
-                  <span className="text-cyan-500">research.pdf</span> into{" "}
-                  <span className="text-cyan-500">/public/</span> and set{" "}
-                  <span className="text-emerald-400">PDF_AVAILABLE = true</span>{" "}
-                  in PaperSection.tsx to activate
                 </p>
 
                 {/* Decorative corner dots */}
