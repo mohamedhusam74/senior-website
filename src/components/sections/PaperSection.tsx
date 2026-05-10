@@ -14,7 +14,7 @@ export default function PaperSection() {
   return (
     <section
       id="paper"
-      className="relative py-24 px-4 md:px-8 bg-[#050a14]"
+      className="relative py-24 px-4 md:px-8 bg-[var(--background)]"
       ref={ref}
     >
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
@@ -37,7 +37,7 @@ export default function PaperSection() {
             </span>
           </div>
           <h2
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-100"
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--foreground)]"
             style={{ fontFamily: "var(--font-oxanium), Oxanium, monospace" }}
           >
             Full Research Document
@@ -52,12 +52,12 @@ export default function PaperSection() {
         >
           {PDF_AVAILABLE ? (
             /* ── ACTIVE: shows once /public/research.pdf is present ─────────── */
-            <div className="rounded-2xl overflow-hidden border border-cyan-900/30 bg-slate-900/60">
-              <div className="flex items-center justify-between px-6 py-4 border-b border-slate-800">
+            <div className="rounded-2xl overflow-hidden border border-[var(--border)] bg-[var(--background-card)]">
+              <div className="flex items-center justify-between px-6 py-4 border-b border-[var(--border)]">
                 <div className="flex items-center gap-3">
                   <FileText className="w-5 h-5 text-cyan-400" />
                   <span
-                    className="text-sm font-semibold text-slate-200"
+                    className="text-sm font-semibold text-[var(--foreground)]"
                     style={{ fontFamily: "var(--font-oxanium), Oxanium, monospace" }}
                   >
                     {research.title}
@@ -83,7 +83,7 @@ export default function PaperSection() {
             </div>
           ) : (
             /* ── PLACEHOLDER: shown until PDF is added ───────────────────────── */
-            <div className="relative rounded-2xl border-2 border-dashed border-cyan-900/40 bg-slate-900/40 overflow-hidden">
+            <div className="relative rounded-2xl border-2 border-dashed border-[var(--border)] bg-[var(--background-card)] overflow-hidden">
               {/* Subtle grid overlay */}
               <div
                 className="absolute inset-0 opacity-[0.03]"
@@ -100,12 +100,12 @@ export default function PaperSection() {
                 </div>
 
                 <h3
-                  className="text-xl font-bold text-slate-200 mb-3"
+                  className="text-xl font-bold text-[var(--foreground)] mb-3"
                   style={{ fontFamily: "var(--font-oxanium), Oxanium, monospace" }}
                 >
                   Research Paper Coming Soon
                 </h3>
-                <p className="text-slate-500 max-w-md">
+                <p className="text-[var(--foreground-muted)] max-w-md">
                   The full research document will be embedded here once finalized.
                 </p>
 

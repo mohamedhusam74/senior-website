@@ -27,7 +27,7 @@ function ContactCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.1, duration: 0.5 }}
-      className="bg-slate-900/60 border border-cyan-900/25 rounded-2xl p-6 hover:border-cyan-500/30 transition-colors"
+      className="bg-[var(--background-card)] border border-[var(--border)] rounded-2xl p-6 hover:border-cyan-500/30 transition-colors"
     >
       <div className="flex items-center gap-4 mb-5">
         <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500/20 to-blue-600/20 border border-cyan-500/25 flex items-center justify-center shrink-0">
@@ -40,7 +40,7 @@ function ContactCard({
         </div>
         <div>
           <h3
-            className="font-semibold text-slate-100 text-base leading-tight"
+            className="font-semibold text-[var(--foreground)] text-base leading-tight"
             style={{ fontFamily: "var(--font-oxanium), Oxanium, monospace" }}
           >
             {member.name}
@@ -55,10 +55,10 @@ function ContactCard({
           className="flex items-center gap-3 group"
           aria-label={`Call ${member.name}`}
         >
-          <div className="w-8 h-8 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center shrink-0 group-hover:border-cyan-700 group-hover:bg-cyan-950/30 transition-all">
-            <Phone className="w-3.5 h-3.5 text-slate-500 group-hover:text-cyan-400 transition-colors" />
+          <div className="w-8 h-8 rounded-lg bg-[var(--background-card)] border border-[var(--border)] flex items-center justify-center shrink-0 group-hover:border-cyan-700 group-hover:bg-cyan-950/30 transition-all">
+            <Phone className="w-3.5 h-3.5 text-[var(--foreground-subtle)] group-hover:text-cyan-400 transition-colors" />
           </div>
-          <span className="text-sm text-slate-400 group-hover:text-slate-200 transition-colors">
+          <span className="text-sm text-[var(--foreground-muted)] group-hover:text-[var(--foreground)] transition-colors">
             {member.phone}
           </span>
         </a>
@@ -68,10 +68,10 @@ function ContactCard({
           className="flex items-center gap-3 group"
           aria-label={`Email ${member.name}`}
         >
-          <div className="w-8 h-8 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center shrink-0 group-hover:border-cyan-700 group-hover:bg-cyan-950/30 transition-all">
-            <Mail className="w-3.5 h-3.5 text-slate-500 group-hover:text-cyan-400 transition-colors" />
+          <div className="w-8 h-8 rounded-lg bg-[var(--background-card)] border border-[var(--border)] flex items-center justify-center shrink-0 group-hover:border-cyan-700 group-hover:bg-cyan-950/30 transition-all">
+            <Mail className="w-3.5 h-3.5 text-[var(--foreground-subtle)] group-hover:text-cyan-400 transition-colors" />
           </div>
-          <span className="text-sm text-slate-400 group-hover:text-slate-200 transition-colors break-all">
+          <span className="text-sm text-[var(--foreground-muted)] group-hover:text-[var(--foreground)] transition-colors break-all">
             {member.email}
           </span>
         </a>
@@ -85,19 +85,19 @@ function ContactCard({
             className="flex items-center gap-3 group"
             aria-label={`${member.name}'s LinkedIn`}
           >
-            <div className="w-8 h-8 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center shrink-0 group-hover:border-cyan-700 group-hover:bg-cyan-950/30 transition-all">
-              <LinkedinIcon className="w-3.5 h-3.5 text-slate-500 group-hover:text-cyan-400 transition-colors" />
+            <div className="w-8 h-8 rounded-lg bg-[var(--background-card)] border border-[var(--border)] flex items-center justify-center shrink-0 group-hover:border-cyan-700 group-hover:bg-cyan-950/30 transition-all">
+              <LinkedinIcon className="w-3.5 h-3.5 text-[var(--foreground-subtle)] group-hover:text-cyan-400 transition-colors" />
             </div>
-            <span className="text-sm text-slate-400 group-hover:text-slate-200 transition-colors">
+            <span className="text-sm text-[var(--foreground-muted)] group-hover:text-[var(--foreground)] transition-colors">
               LinkedIn Profile
             </span>
           </a>
         ) : (
           <div className="flex items-center gap-3 opacity-40 cursor-default">
-            <div className="w-8 h-8 rounded-lg bg-slate-800 border border-slate-700/50 flex items-center justify-center shrink-0">
-              <LinkedinIcon className="w-3.5 h-3.5 text-slate-600" />
+            <div className="w-8 h-8 rounded-lg bg-[var(--background-card)] border border-[var(--border)] flex items-center justify-center shrink-0">
+              <LinkedinIcon className="w-3.5 h-3.5 text-[var(--foreground-subtle)]" />
             </div>
-            <span className="text-sm text-slate-600 italic">LinkedIn — Coming Soon</span>
+            <span className="text-sm text-[var(--foreground-subtle)] italic">LinkedIn — Coming Soon</span>
           </div>
         )}
       </div>
@@ -112,7 +112,7 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      className="relative py-24 px-4 md:px-8 bg-[#07101f]"
+      className="relative py-24 px-4 md:px-8 bg-[var(--background-alt)]"
       ref={ref}
     >
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
@@ -134,12 +134,12 @@ export default function ContactSection() {
             </span>
           </div>
           <h2
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-100 mb-4"
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--foreground)] mb-4"
             style={{ fontFamily: "var(--font-oxanium), Oxanium, monospace" }}
           >
             Get in Touch
           </h2>
-          <p className="text-slate-400 max-w-lg text-base md:text-lg">
+          <p className="text-[var(--foreground-muted)] max-w-lg text-base md:text-lg">
             Interested in our research or want to connect? Reach out to either
             researcher directly.
           </p>
@@ -150,12 +150,12 @@ export default function ContactSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.1, duration: 0.5 }}
-          className="flex items-center gap-3 bg-slate-900/40 border border-slate-800 rounded-xl px-5 py-4 mb-8 w-fit"
+          className="flex items-center gap-3 bg-[var(--background-card)] border border-[var(--border)] rounded-xl px-5 py-4 mb-8 w-fit"
         >
           <MapPin className="w-4 h-4 text-cyan-400 shrink-0" />
           <div>
-            <p className="text-sm font-medium text-slate-200">{research.university}</p>
-            <p className="text-xs text-slate-500">Senior Project Exhibition · {research.year}</p>
+            <p className="text-sm font-medium text-[var(--foreground)]">{research.university}</p>
+            <p className="text-xs text-[var(--foreground-muted)]">Senior Project Exhibition · {research.year}</p>
           </div>
         </motion.div>
 

@@ -109,10 +109,10 @@ function FloatingBadge({ icon: Icon, label, delay }: { icon: React.ElementType; 
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ delay, duration: 0.5, ease: "easeOut" }}
-      className="animate-float flex items-center gap-2 bg-slate-900/80 border border-cyan-900/40 rounded-full px-4 py-2 text-xs text-cyan-300 backdrop-blur-sm"
+      className="animate-float flex items-center gap-2 bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-cyan-900/40 rounded-full px-4 py-2 text-xs text-cyan-700 dark:text-cyan-300 backdrop-blur-sm shadow-sm dark:shadow-none"
       style={{ animationDelay: `${delay * 0.5}s` }}
     >
-      <Icon className="w-3.5 h-3.5 text-cyan-400" />
+      <Icon className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400" />
       {label}
     </motion.div>
   );
@@ -123,7 +123,7 @@ export default function HeroSection() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-[#050a14]"
+      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-[var(--background)]"
     >
       {/* Background gradient orbs */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
@@ -155,10 +155,10 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 bg-cyan-500/10 border border-cyan-500/20 rounded-full px-5 py-2 text-xs text-cyan-400 mb-8 font-medium tracking-wider uppercase"
+          className="inline-flex items-center gap-2 bg-cyan-500/10 border border-cyan-500/20 rounded-full px-5 py-2 text-xs text-cyan-600 dark:text-cyan-400 mb-8 font-medium tracking-wider uppercase"
         >
           <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
-          University of Bahrain · Senior Capstone 2025
+          University of Bahrain · Senior Research 2026
         </motion.div>
 
         {/* Main title */}
@@ -169,16 +169,16 @@ export default function HeroSection() {
           className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6"
           style={{ fontFamily: "var(--font-oxanium), Oxanium, monospace" }}
         >
-          <span className="text-slate-100">Developing an </span>
+          <span className="text-slate-900 dark:text-slate-100">Developing an </span>
           <span
-            className="bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-300 bg-clip-text text-transparent"
+            className="bg-gradient-to-r from-cyan-600 via-blue-500 to-cyan-500 dark:from-cyan-400 dark:via-blue-400 dark:to-cyan-300 bg-clip-text text-transparent"
           >
             Agentic AI
           </span>
           <br />
-          <span className="text-slate-100">Vulnerabilities </span>
+          <span className="text-slate-900 dark:text-slate-100">Vulnerabilities </span>
           <span
-            className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent"
+            className="bg-gradient-to-r from-emerald-600 to-cyan-600 dark:from-emerald-400 dark:to-cyan-400 bg-clip-text text-transparent"
           >
             Framework
           </span>
@@ -189,7 +189,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.6 }}
-          className="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto mb-10"
+          className="text-slate-600 dark:text-slate-400 text-lg md:text-xl max-w-2xl mx-auto mb-10"
           style={{ fontFamily: "var(--font-dm-sans), DM Sans, sans-serif" }}
         >
           {research.subtitle} — {research.university}, {research.year}
@@ -223,7 +223,7 @@ export default function HeroSection() {
           </a>
           <a
             href="#team"
-            className="inline-flex items-center justify-center gap-2 bg-slate-800/60 hover:bg-slate-700/60 text-slate-200 border border-slate-700 hover:border-cyan-800 font-medium px-8 py-3.5 rounded-xl transition-all duration-200"
+            className="inline-flex items-center justify-center gap-2 bg-white/70 dark:bg-slate-800/60 hover:bg-white dark:hover:bg-slate-700/60 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700 hover:border-cyan-500/50 dark:hover:border-cyan-800 font-medium px-8 py-3.5 rounded-xl transition-all duration-200"
           >
             Meet the Team
           </a>
@@ -235,14 +235,14 @@ export default function HeroSection() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-600"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-500 dark:text-slate-600"
       >
         <span className="text-xs tracking-widest uppercase">Scroll</span>
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
         >
-          <ChevronDown className="w-5 h-5 text-cyan-800" />
+          <ChevronDown className="w-5 h-5 text-cyan-600 dark:text-cyan-800" />
         </motion.div>
       </motion.div>
     </section>

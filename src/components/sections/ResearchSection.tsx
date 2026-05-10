@@ -30,7 +30,7 @@ function PillarCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.1, duration: 0.5 }}
-      className="group relative bg-slate-900/60 border border-cyan-900/25 rounded-xl p-6 hover:border-cyan-500/40 transition-all duration-300 hover:bg-slate-900/80"
+      className="group relative bg-[var(--background-card)] border border-[var(--border)] rounded-xl p-6 hover:border-cyan-500/40 transition-all duration-300"
     >
       {/* Top accent line */}
       <div className="absolute top-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-cyan-500/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -39,12 +39,12 @@ function PillarCard({
         <Icon className="w-5 h-5 text-cyan-400" />
       </div>
       <h3
-        className="text-base font-semibold text-slate-100 mb-2"
+        className="text-base font-semibold text-[var(--foreground)] mb-2"
         style={{ fontFamily: "var(--font-oxanium), Oxanium, monospace" }}
       >
         {title}
       </h3>
-      <p className="text-sm text-slate-400 leading-relaxed">{description}</p>
+      <p className="text-sm text-[var(--foreground-muted)] leading-relaxed">{description}</p>
     </motion.div>
   );
 }
@@ -56,7 +56,7 @@ export default function ResearchSection() {
   return (
     <section
       id="research"
-      className="relative py-24 px-4 md:px-8 bg-[#050a14]"
+      className="relative py-24 px-4 md:px-8 bg-[var(--background)]"
       ref={ref}
     >
       {/* Background accent */}
@@ -80,13 +80,13 @@ export default function ResearchSection() {
             </span>
           </div>
           <h2
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-100 mb-4"
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--foreground)] mb-4"
             style={{ fontFamily: "var(--font-oxanium), Oxanium, monospace" }}
           >
             About the Project
           </h2>
-          <p className="text-slate-400 max-w-2xl text-base md:text-lg leading-relaxed">
-            A comprehensive capstone research effort to identify, classify, and
+          <p className="text-[var(--foreground-muted)] max-w-2xl text-base md:text-lg leading-relaxed">
+            A comprehensive research effort to identify, classify, and
             mitigate the unique security vulnerabilities present in agentic AI
             systems.
           </p>
@@ -99,14 +99,14 @@ export default function ResearchSection() {
             initial={{ opacity: 0, x: -30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ delay: 0.2, duration: 0.6 }}
-            className="lg:col-span-3 bg-slate-900/60 border border-cyan-900/25 rounded-2xl p-8"
+            className="lg:col-span-3 bg-[var(--background-card)] border border-[var(--border)] rounded-2xl p-8"
           >
             <div className="flex items-center gap-3 mb-5">
               <div className="w-8 h-8 rounded-lg bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center">
                 <FileText className="w-4 h-4 text-cyan-400" />
               </div>
               <h3
-                className="text-lg font-semibold text-slate-200"
+                className="text-lg font-semibold text-[var(--foreground)]"
                 style={{ fontFamily: "var(--font-oxanium), Oxanium, monospace" }}
               >
                 Research Title
@@ -114,14 +114,14 @@ export default function ResearchSection() {
             </div>
 
             <p
-              className="text-xl font-semibold text-slate-100 mb-6 leading-snug bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-300 bg-clip-text text-transparent"
+              className="text-xl font-semibold mb-6 leading-snug bg-gradient-to-r from-cyan-600 via-blue-500 to-cyan-500 dark:from-cyan-400 dark:via-blue-400 dark:to-cyan-300 bg-clip-text text-transparent"
               style={{ fontFamily: "var(--font-oxanium), Oxanium, monospace" }}
             >
               {research.title}
             </p>
 
-            <div className="border-t border-slate-800 pt-6">
-              <h4 className="text-sm font-medium text-slate-500 uppercase tracking-wider mb-3">
+            <div className="border-t border-[var(--border)] pt-6">
+              <h4 className="text-sm font-medium text-[var(--foreground-subtle)] uppercase tracking-wider mb-3">
                 Abstract
               </h4>
               {/* TODO: Replace research.abstract in /src/data/research.ts with actual abstract text */}
@@ -131,15 +131,15 @@ export default function ResearchSection() {
             </div>
 
             {/* Meta row */}
-            <div className="flex flex-wrap gap-4 mt-6 pt-6 border-t border-slate-800">
+            <div className="flex flex-wrap gap-4 mt-6 pt-6 border-t border-[var(--border)]">
               {[
                 { label: "Institution", value: research.university },
                 { label: "Year", value: research.year },
-                { label: "Type", value: "Senior Capstone" },
+                { label: "Type", value: "Senior Project" },
               ].map(({ label, value }) => (
                 <div key={label}>
-                  <p className="text-xs text-slate-600 uppercase tracking-wider">{label}</p>
-                  <p className="text-sm font-medium text-slate-300">{value}</p>
+                  <p className="text-xs text-[var(--foreground-subtle)] uppercase tracking-wider">{label}</p>
+                  <p className="text-sm font-medium text-[var(--foreground-muted)]">{value}</p>
                 </div>
               ))}
             </div>
@@ -154,14 +154,14 @@ export default function ResearchSection() {
           >
             {/* Download button */}
             {/* TODO: Drop research.pdf into /public/research.pdf, then change disabled to href="/research.pdf" download */}
-            <div className="bg-slate-900/60 border border-cyan-900/25 rounded-2xl p-6">
+            <div className="bg-[var(--background-card)] border border-[var(--border)] rounded-2xl p-6">
               <h3
-                className="text-base font-semibold text-slate-200 mb-2"
+                className="text-base font-semibold text-[var(--foreground)] mb-2"
                 style={{ fontFamily: "var(--font-oxanium), Oxanium, monospace" }}
               >
                 Research Paper
               </h3>
-              <p className="text-sm text-slate-500 mb-5">
+              <p className="text-sm text-[var(--foreground-muted)] mb-5">
                 The full research document will be available once finalized.
               </p>
               <div className="relative group">
@@ -174,16 +174,16 @@ export default function ResearchSection() {
                   <Download className="w-4 h-4" />
                   Download Research Paper
                 </button>
-                <span className="absolute -top-8 left-1/2 -translate-x-1/2 bg-slate-800 border border-slate-700 text-slate-300 text-xs px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+                <span className="absolute -top-8 left-1/2 -translate-x-1/2 bg-[var(--background-card)] border border-[var(--border)] text-[var(--foreground-muted)] text-xs px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-md">
                   Coming Soon — PDF will be uploaded
                 </span>
               </div>
             </div>
 
             {/* Research stats */}
-            <div className="bg-slate-900/60 border border-cyan-900/25 rounded-2xl p-6 flex-1">
+            <div className="bg-[var(--background-card)] border border-[var(--border)] rounded-2xl p-6 flex-1">
               <h3
-                className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4"
+                className="text-sm font-semibold text-[var(--foreground-subtle)] uppercase tracking-wider mb-4"
                 style={{ fontFamily: "var(--font-oxanium), Oxanium, monospace" }}
               >
                 Research Scope
@@ -192,13 +192,13 @@ export default function ResearchSection() {
                 { label: "Research Pillars", value: "4" },
                 { label: "Team Members", value: "2" },
                 { label: "Focus Area", value: "AI Security" },
-                { label: "Year", value: "2025" },
+                { label: "Year", value: "2026" },
               ].map(({ label, value }) => (
                 <div
                   key={label}
-                  className="flex items-center justify-between py-2.5 border-b border-slate-800 last:border-0"
+                  className="flex items-center justify-between py-2.5 border-b border-[var(--border)] last:border-0"
                 >
-                  <span className="text-sm text-slate-500">{label}</span>
+                  <span className="text-sm text-[var(--foreground-muted)]">{label}</span>
                   <span className="text-sm font-semibold text-cyan-400">{value}</span>
                 </div>
               ))}

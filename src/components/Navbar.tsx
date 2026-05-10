@@ -49,7 +49,7 @@ export default function Navbar() {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[#050a14]/90 border-b border-cyan-900/40 backdrop-blur-md shadow-lg shadow-cyan-950/20"
+          ? "bg-[var(--background-nav)] border-b border-[var(--border)] backdrop-blur-md shadow-lg shadow-black/10"
           : "bg-transparent"
       }`}
     >
@@ -60,7 +60,7 @@ export default function Navbar() {
             <Shield className="w-4 h-4 text-cyan-400" />
           </div>
           <span
-            className="font-['var(--font-oxanium)',Oxanium,monospace] text-sm font-semibold text-slate-200 group-hover:text-cyan-400 transition-colors"
+            className="font-['var(--font-oxanium)',Oxanium,monospace] text-sm font-semibold text-[var(--foreground)] group-hover:text-cyan-400 transition-colors"
             style={{ fontFamily: "var(--font-oxanium), Oxanium, monospace" }}
           >
             UoB Research
@@ -78,7 +78,7 @@ export default function Navbar() {
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                   isActive
                     ? "text-cyan-400 bg-cyan-500/10"
-                    : "text-slate-400 hover:text-slate-100 hover:bg-slate-800/50"
+                    : "text-[var(--foreground-muted)] hover:text-[var(--foreground)] hover:bg-slate-500/10 dark:hover:bg-slate-800/20"
                 }`}
               >
                 {link.label}
@@ -92,7 +92,7 @@ export default function Navbar() {
           {mounted && (
             <button
               onClick={toggleTheme}
-              className="w-9 h-9 rounded-lg border border-slate-700 bg-slate-800/50 flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:border-cyan-800 transition-all"
+              className="w-9 h-9 rounded-lg border border-[var(--border)] bg-[var(--background-card)] flex items-center justify-center text-[var(--foreground-muted)] hover:text-cyan-400 hover:border-cyan-800 transition-all"
               aria-label="Toggle theme"
             >
               {resolvedTheme === "dark" ? (
@@ -103,7 +103,7 @@ export default function Navbar() {
             </button>
           )}
           <button
-            className="md:hidden w-9 h-9 rounded-lg border border-slate-700 bg-slate-800/50 flex items-center justify-center text-slate-400 hover:text-cyan-400 transition-all"
+            className="md:hidden w-9 h-9 rounded-lg border border-[var(--border)] bg-[var(--background-card)] flex items-center justify-center text-[var(--foreground-muted)] hover:text-cyan-400 transition-all"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
@@ -120,7 +120,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden bg-[#050a14]/95 border-b border-cyan-900/30 backdrop-blur-md overflow-hidden"
+            className="md:hidden bg-[var(--background-nav)] border-b border-[var(--border)] backdrop-blur-md overflow-hidden"
           >
             <div className="px-4 py-3 flex flex-col gap-1">
               {navLinks.map((link) => (

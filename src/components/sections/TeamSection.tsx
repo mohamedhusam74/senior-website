@@ -9,7 +9,7 @@ import { teamMembers, type TeamMember } from "@/data/team";
 
 function SkillBadge({ skill }: { skill: string }) {
   return (
-    <span className="inline-flex items-center px-2.5 py-1 rounded-md bg-slate-800 border border-slate-700/50 text-xs font-medium text-slate-300 hover:border-cyan-700/50 hover:text-cyan-300 transition-colors">
+    <span className="inline-flex items-center px-2.5 py-1 rounded-md bg-[var(--background-card)] border border-[var(--border)] text-xs font-medium text-[var(--foreground-muted)] hover:border-cyan-700/50 hover:text-cyan-400 transition-colors">
       {skill}
     </span>
   );
@@ -19,7 +19,7 @@ function CertBadge({ cert }: { cert: string }) {
   return (
     <div className="flex items-start gap-2 text-sm">
       <CheckCircle className="w-3.5 h-3.5 text-emerald-400 mt-0.5 shrink-0" />
-      <span className="text-slate-400 leading-snug">{cert}</span>
+      <span className="text-[var(--foreground-muted)] leading-snug">{cert}</span>
     </div>
   );
 }
@@ -37,7 +37,7 @@ function TeamCard({ member, index }: { member: TeamMember; index: number }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.15, duration: 0.6, ease: "easeOut" }}
-      className="group relative bg-slate-900/70 border border-cyan-900/25 rounded-2xl overflow-hidden hover:border-cyan-500/35 transition-all duration-300"
+      className="group relative bg-[var(--background-card)] border border-[var(--border)] rounded-2xl overflow-hidden hover:border-cyan-500/35 transition-all duration-300"
       aria-label={`Team member: ${member.name}`}
     >
       {/* Top gradient bar */}
@@ -56,7 +56,7 @@ function TeamCard({ member, index }: { member: TeamMember; index: number }) {
           </div>
           <div className="min-w-0">
             <h3
-              className="text-lg font-bold text-slate-100 leading-tight mb-1"
+              className="text-lg font-bold text-[var(--foreground)] leading-tight mb-1"
               style={{ fontFamily: "var(--font-oxanium), Oxanium, monospace" }}
             >
               {member.name}
@@ -66,13 +66,13 @@ function TeamCard({ member, index }: { member: TeamMember; index: number }) {
         </div>
 
         {/* Bio */}
-        <p className="text-sm text-slate-400 leading-relaxed mb-6">
+        <p className="text-sm text-[var(--foreground-muted)] leading-relaxed mb-6">
           {member.bio}
         </p>
 
         {/* Skills */}
         <div className="mb-6">
-          <h4 className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-3">
+          <h4 className="text-xs font-semibold text-[var(--foreground-subtle)] uppercase tracking-wider mb-3">
             Technical Skills
           </h4>
           <div className="flex flex-wrap gap-2">
@@ -84,7 +84,7 @@ function TeamCard({ member, index }: { member: TeamMember; index: number }) {
 
         {/* Certifications */}
         <div className="mb-6">
-          <h4 className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-3">
+          <h4 className="text-xs font-semibold text-[var(--foreground-subtle)] uppercase tracking-wider mb-3">
             Certifications
           </h4>
           <div className="flex flex-col gap-2">
@@ -97,14 +97,14 @@ function TeamCard({ member, index }: { member: TeamMember; index: number }) {
         {/* Activities */}
         {member.activities.length > 0 && (
           <div className="mb-6">
-            <h4 className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-3">
+            <h4 className="text-xs font-semibold text-[var(--foreground-subtle)] uppercase tracking-wider mb-3">
               {index === 0 ? "Projects" : "Experience & Activities"}
             </h4>
             <div className="flex flex-col gap-1.5">
               {member.activities.map((activity) => (
                 <div key={activity} className="flex items-start gap-2 text-sm">
                   <span className="w-1 h-1 rounded-full bg-cyan-500 mt-2 shrink-0" />
-                  <span className="text-slate-400">{activity}</span>
+                  <span className="text-[var(--foreground-muted)]">{activity}</span>
                 </div>
               ))}
             </div>
@@ -112,23 +112,23 @@ function TeamCard({ member, index }: { member: TeamMember; index: number }) {
         )}
 
         {/* Divider */}
-        <div className="border-t border-slate-800 pt-5">
+        <div className="border-t border-[var(--border)] pt-5">
           {/* Contact links */}
           <div className="flex flex-col gap-2.5 mb-5">
             <a
               href={`tel:${member.phone}`}
-              className="flex items-center gap-2.5 text-sm text-slate-400 hover:text-cyan-400 transition-colors group/link"
+              className="flex items-center gap-2.5 text-sm text-[var(--foreground-muted)] hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors group/link"
               aria-label={`Call ${member.name}`}
             >
-              <Phone className="w-3.5 h-3.5 shrink-0 text-slate-600 group-hover/link:text-cyan-400 transition-colors" />
+              <Phone className="w-3.5 h-3.5 shrink-0 text-[var(--foreground-subtle)] group-hover/link:text-cyan-500 dark:group-hover/link:text-cyan-400 transition-colors" />
               {member.phone}
             </a>
             <a
               href={`mailto:${member.email}`}
-              className="flex items-center gap-2.5 text-sm text-slate-400 hover:text-cyan-400 transition-colors group/link"
+              className="flex items-center gap-2.5 text-sm text-[var(--foreground-muted)] hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors group/link"
               aria-label={`Email ${member.name}`}
             >
-              <Mail className="w-3.5 h-3.5 shrink-0 text-slate-600 group-hover/link:text-cyan-400 transition-colors" />
+              <Mail className="w-3.5 h-3.5 shrink-0 text-[var(--foreground-subtle)] group-hover/link:text-cyan-500 dark:group-hover/link:text-cyan-400 transition-colors" />
               {member.email}
             </a>
             {/* TODO: Replace null with LinkedIn URL in /src/data/team.ts */}
@@ -137,14 +137,14 @@ function TeamCard({ member, index }: { member: TeamMember; index: number }) {
                 href={member.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2.5 text-sm text-slate-400 hover:text-cyan-400 transition-colors group/link"
+                className="flex items-center gap-2.5 text-sm text-[var(--foreground-muted)] hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors group/link"
                 aria-label={`${member.name} LinkedIn profile`}
               >
-                <LinkedinIcon className="w-3.5 h-3.5 shrink-0 text-slate-600 group-hover/link:text-cyan-400 transition-colors" />
+                <LinkedinIcon className="w-3.5 h-3.5 shrink-0 text-[var(--foreground-subtle)] group-hover/link:text-cyan-500 dark:group-hover/link:text-cyan-400 transition-colors" />
                 LinkedIn Profile
               </a>
             ) : (
-              <span className="flex items-center gap-2.5 text-sm text-slate-600 cursor-default">
+              <span className="flex items-center gap-2.5 text-sm text-[var(--foreground-subtle)] cursor-default">
                 <LinkedinIcon className="w-3.5 h-3.5 shrink-0" />
                 LinkedIn — Coming Soon
               </span>
@@ -166,7 +166,7 @@ function TeamCard({ member, index }: { member: TeamMember; index: number }) {
           ) : (
             <button
               disabled
-              className="w-full flex items-center justify-center gap-2 bg-slate-800/50 border border-slate-700/40 text-slate-600 font-medium text-sm px-4 py-2.5 rounded-xl cursor-not-allowed"
+              className="w-full flex items-center justify-center gap-2 bg-[var(--background-card)] border border-[var(--border)] text-[var(--foreground-subtle)] font-medium text-sm px-4 py-2.5 rounded-xl cursor-not-allowed"
               title="CV will be available soon"
             >
               <Download className="w-3.5 h-3.5" />
@@ -186,7 +186,7 @@ export default function TeamSection() {
   return (
     <section
       id="team"
-      className="relative py-24 px-4 md:px-8 bg-[#07101f]"
+      className="relative py-24 px-4 md:px-8 bg-[var(--background-alt)]"
       ref={ref}
     >
       {/* Background */}
@@ -212,12 +212,12 @@ export default function TeamSection() {
             </span>
           </div>
           <h2
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-100 mb-4"
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--foreground)] mb-4"
             style={{ fontFamily: "var(--font-oxanium), Oxanium, monospace" }}
           >
             Meet the Researchers
           </h2>
-          <p className="text-slate-400 max-w-xl text-base md:text-lg">
+          <p className="text-[var(--foreground-muted)] max-w-xl text-base md:text-lg">
             Two cybersecurity students from the University of Bahrain driving this
             research forward.
           </p>

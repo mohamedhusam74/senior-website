@@ -18,11 +18,11 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: "Developing an Agentic AI Vulnerabilities Framework | University of Bahrain",
   description:
-    "Senior Capstone Research Project by Mohamed Husam and Kaltham Abdulla — University of Bahrain, 2025. Developing a comprehensive framework for identifying and mitigating vulnerabilities in agentic AI systems.",
+    "Senior Research Project by Mohamed Husam and Kaltham Abdulla — University of Bahrain, 2026. Developing a comprehensive framework for identifying and mitigating vulnerabilities in agentic AI systems.",
   keywords: ["agentic AI", "cybersecurity", "vulnerabilities", "University of Bahrain", "senior project", "AI security"],
   openGraph: {
-    title: "Agentic AI Vulnerabilities Framework — UoB Senior Project 2025",
-    description: "Senior Capstone Research: Developing a framework for agentic AI security vulnerabilities.",
+    title: "Agentic AI Vulnerabilities Framework — UoB Senior Project 2026",
+    description: "Senior Research: Developing a framework for agentic AI security vulnerabilities.",
     type: "website",
   },
 };
@@ -38,7 +38,7 @@ export default function RootLayout({
       className={`${oxanium.variable} ${dmSans.variable} scroll-smooth`}
       suppressHydrationWarning
     >
-      <body className="min-h-full antialiased bg-[#050a14] text-slate-100">
+      <body className="min-h-full antialiased bg-[var(--background)] text-[var(--foreground)]">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           {children}
         </ThemeProvider>

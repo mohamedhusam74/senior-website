@@ -16,8 +16,8 @@ export const teamMembers: TeamMember[] = [
     name: "Mohamed Husam Mohamed Darwish",
     phone: "+97338236611",
     email: "mohamedhusam2003@gmail.com",
-    linkedin: null, // TODO: Add LinkedIn URL
-    role: "Cybersecurity Enthusiast | 4th Year CS Student",
+    linkedin: "https://www.linkedin.com/in/mohamed-husam-0a70a6247",
+    role: "Cybersecurity Enthusiast | 4th Year CY student",
     bio: "4th year Cybersecurity student at University of Bahrain, also enrolled at Reboot Coding Institute. Passionate about ethical hacking, penetration testing, protecting systems, and managing risks.",
     skills: ["Java", "Go", "Python", "JavaScript", "HTML", "CSS", "SQLite", "Docker", "Git", "RESTful APIs", "Client-Server Architecture"],
     certifications: [
@@ -38,7 +38,7 @@ export const teamMembers: TeamMember[] = [
     name: "Kaltham Abdulla Mohamed Basalar",
     phone: "+97335348069",
     email: "kaltham.abdulla22@gmail.com",
-    linkedin: null, // TODO: Add LinkedIn URL
+    linkedin: "https://www.linkedin.com/in/kaltham-basalar-268b05348",
     role: "Cybersecurity Student",
     bio: "Responsible and detail-oriented cybersecurity student looking forward to making an impact in the field.",
     skills: ["Microsoft 365", "Wireshark", "Packet Tracer", "Python", "Java"],
