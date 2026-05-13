@@ -94,17 +94,34 @@ function TeamCard({ member, index }: { member: TeamMember; index: number }) {
           </div>
         </div>
 
-        {/* Activities */}
+        {/* Activities / Projects */}
         {member.activities.length > 0 && (
           <div className="mb-6">
             <h4 className="text-xs font-semibold text-[var(--foreground-subtle)] uppercase tracking-wider mb-3">
-              {index === 0 ? "Projects" : "Experience & Activities"}
+              {index === 0 ? "Key Projects" : "Experience & Activities"}
             </h4>
             <div className="flex flex-col gap-1.5">
               {member.activities.map((activity) => (
                 <div key={activity} className="flex items-start gap-2 text-sm">
                   <span className="w-1 h-1 rounded-full bg-cyan-500 mt-2 shrink-0" />
                   <span className="text-[var(--foreground-muted)]">{activity}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Experience & Volunteering */}
+        {member.experience && member.experience.length > 0 && (
+          <div className="mb-6">
+            <h4 className="text-xs font-semibold text-[var(--foreground-subtle)] uppercase tracking-wider mb-3">
+              Experience & Volunteering
+            </h4>
+            <div className="flex flex-col gap-1.5">
+              {member.experience.map((item) => (
+                <div key={item} className="flex items-start gap-2 text-sm">
+                  <span className="w-1 h-1 rounded-full bg-emerald-500 mt-2 shrink-0" />
+                  <span className="text-[var(--foreground-muted)]">{item}</span>
                 </div>
               ))}
             </div>
@@ -152,7 +169,6 @@ function TeamCard({ member, index }: { member: TeamMember; index: number }) {
           </div>
 
           {/* CV Download */}
-          {/* TODO: Drop {member.cvFile} into /public/cvs/ to enable download */}
           {member.cvFile ? (
             <a
               href={`/cvs/${member.cvFile}`}

@@ -8,7 +8,8 @@ export interface TeamMember {
   skills: string[];
   certifications: string[];
   activities: string[];
-  cvFile: string | null; // drop file into /public/cvs/ with this filename
+  experience: string[];
+  cvFile: string | null;
 }
 
 export const teamMembers: TeamMember[] = [
@@ -17,22 +18,33 @@ export const teamMembers: TeamMember[] = [
     phone: "+97338236611",
     email: "mohamedhusam2003@gmail.com",
     linkedin: "https://www.linkedin.com/in/mohamed-husam-0a70a6247",
-    role: "Cybersecurity Enthusiast | 4th Year CY student",
-    bio: "4th year Cybersecurity student at University of Bahrain, also enrolled at Reboot Coding Institute. Passionate about ethical hacking, penetration testing, protecting systems, and managing risks.",
-    skills: ["Java", "Go", "Python", "JavaScript", "HTML", "CSS", "SQLite", "Docker", "Git", "RESTful APIs", "Client-Server Architecture"],
+    role: "Cybersecurity Practitioner | BS Cybersecurity @ UoB",
+    bio: "Cybersecurity practitioner with hands-on experience in ethical hacking, penetration testing, system hardening, and risk management. Skilled in building secure applications using Python, Go, and JavaScript, with a strong foundation in client-server architecture, real-time systems, and network security. Actively pursuing advanced credentials in cloud architecture and penetration testing.",
+    skills: [
+      "Python", "Go", "Java", "JavaScript",
+      "HTML", "CSS", "RESTful APIs", "SQLite",
+      "Git", "Docker", "Real-Time Systems", "Penetration Testing",
+      "Network Security", "System Hardening",
+    ],
     certifications: [
       "AWS Cloud Practitioner (2025)",
       "Pursuing AWS Solutions Architect",
-      "Pursuing eJPTv2",
+      "Pursuing eJPTv2 (eLearnSecurity)",
     ],
     activities: [
-      "Real-Time News Aggregation System",
-      "Artist Events Dashboard",
-      "Real-time Forum",
-      "Ant Colony Pathfinding Simulator",
-      "Browser-Based Arcade Game Engine",
+      "Real-Time News Aggregation System — Python, Sockets, SSL",
+      "Artist Events Dashboard — Go, REST APIs",
+      "Real-Time Forum — Go, JavaScript, SQLite, WebSockets",
+      "Ant Colony Pathfinding Simulator — Go",
+      "Browser-Based Arcade Game Engine — JavaScript, DOM",
     ],
-    cvFile: "mohamed_cv.pdf", // drop file at /public/cvs/mohamed_cv.pdf
+    experience: [
+      "Hub Administrator — D11 Gaming Hub, Dana Mall (2024)",
+      "IT Volunteer — Bahrain Asian Youth Games 2025",
+      "Volunteer — Arab International Cybersecurity Conference (AICS) 2025",
+      "Volunteer — First Cyber Security Youth Forum, UoB",
+    ],
+    cvFile: "mohamed_cv.pdf",
   },
   {
     name: "Kaltham Abdulla Mohamed Basalar",
@@ -51,6 +63,7 @@ export const teamMembers: TeamMember[] = [
       "Internship at D11 Gaming Hub (2025)",
       "Arab International Cybersecurity Conference & Exhibition (ICS) 2023",
     ],
-    cvFile: "kaltham_cv.pdf", // drop file at /public/cvs/kaltham_cv.pdf
+    experience: [],
+    cvFile: "kaltham_cv.pdf",
   },
 ];

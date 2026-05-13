@@ -19,9 +19,8 @@ export const research: ResearchData = {
   subtitle: "Senior Research Project",
   university: "University of Bahrain",
   year: "2026",
-  // TODO: Replace this placeholder with the actual research abstract
   abstract:
-    "Research abstract will be added here — PDF content coming soon. This section will contain a comprehensive overview of the research methodology, findings, and contributions to the field of agentic AI security.",
+    "The emergence of agentic artificial intelligence (AI) presents the next iteration of intelligent systems, characterized by their ability to think independently, make use of memories, make decisions, and execute external tools. While these qualities enable better automation and increased effectiveness, agentic systems also introduce unique cybersecurity vulnerabilities distinct from those in conventional AI or traditional software. This paper proposes a framework for examining vulnerabilities in agentic AI systems, analyzing security threats across five operational layers: Interaction, Context & Memory, Reasoning, Tool & Execution, and Governance & Trust. Additionally, this research introduces the concept of cross-layer vulnerability propagation — threats that cascade across multiple stages of an agentic system rather than remaining isolated. The framework was evaluated through qualitative interviews with cybersecurity professionals and AI practitioners. Findings confirm that the proposed framework, along with concepts such as vulnerability propagation and prompt injection, is highly relevant and broadly supported by domain experts.",
   pdfFile: "research.pdf", // drop file at /public/research.pdf to enable download & viewer
   pillars: [
     {
