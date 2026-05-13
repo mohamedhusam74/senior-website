@@ -18,8 +18,8 @@ export const teamMembers: TeamMember[] = [
     phone: "+97338236611",
     email: "mohamedhusam2003@gmail.com",
     linkedin: "https://www.linkedin.com/in/mohamed-husam-0a70a6247",
-    role: "Cybersecurity enthusiastecurity @ UoB",
-    bio: "Cybersecurity practitioner with hands-on experience in ethical hacking, penetration testing, system hardening, and risk management. Skilled in building secure applications using Python, Go, and JavaScript, with a strong foundation in client-server architecture, real-time systems, and network security. Actively pursuing advanced credentials in cloud architecture and penetration testing.",
+    role: "Cybersecurity enthusiast | BS Cybersecurity @ UoB",
+    bio: "Cybersecurity enthusiast with hands-on experience in ethical hacking, penetration testing, system hardening, and risk management. Skilled in building secure applications using Python, Go, and JavaScript, with a strong foundation in client-server architecture, real-time systems, and network security. Actively pursuing advanced credentials in cloud architecture and penetration testing.",
     skills: [
       "Python", "Go", "Java", "JavaScript",
       "HTML", "CSS", "RESTful APIs", "SQLite",
