@@ -2,11 +2,10 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail } from "lucide-react";
 
 import LinkedinIcon from "@/components/LinkedinIcon";
 import { teamMembers } from "@/data/team";
-import { research } from "@/data/research";
 
 function ContactCard({
   member,
@@ -143,20 +142,6 @@ export default function ContactSection() {
             Interested in our research or want to connect? Reach out to either
             researcher directly.
           </p>
-        </motion.div>
-
-        {/* University info */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 0.1, duration: 0.5 }}
-          className="flex items-center gap-3 bg-[var(--background-card)] border border-[var(--border)] rounded-xl px-5 py-4 mb-8 w-fit"
-        >
-          <MapPin className="w-4 h-4 text-cyan-400 shrink-0" />
-          <div>
-            <p className="text-sm font-medium text-[var(--foreground)]">{research.university}</p>
-            <p className="text-xs text-[var(--foreground-muted)]">Senior Project Exhibition · {research.year}</p>
-          </div>
         </motion.div>
 
         {/* Contact cards */}

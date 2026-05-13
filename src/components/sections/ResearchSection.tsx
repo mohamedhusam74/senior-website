@@ -191,22 +191,17 @@ export default function ResearchSection() {
               </h3>
             </div>
             <p className="text-sm text-[var(--foreground-muted)] mb-5 flex-1">
-              The full research document — available for download once the final version is published.
+              Download the complete research paper covering our framework, methodology, and findings on agentic AI vulnerabilities.
             </p>
-            <div className="relative group">
-              <button
-                disabled
-                className="w-full flex items-center justify-center gap-2 bg-cyan-500/10 border border-cyan-500/20 text-[var(--foreground-subtle)] font-medium px-5 py-3 rounded-xl cursor-not-allowed select-none"
-                aria-label="Research paper coming soon"
-                title="Coming Soon — PDF will be uploaded"
-              >
-                <Download className="w-4 h-4" />
-                Download Research Paper
-              </button>
-              <span className="absolute -top-9 left-1/2 -translate-x-1/2 bg-[var(--background-card)] border border-[var(--border)] text-[var(--foreground-muted)] text-xs px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-md">
-                Coming Soon — PDF will be uploaded
-              </span>
-            </div>
+            <a
+              href="/research.pdf"
+              download="Developing an Agentic AI Vulnerabilities Framework.pdf"
+              className="w-full flex items-center justify-center gap-2 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold px-5 py-3 rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-cyan-500/25"
+              aria-label="Download Research Paper PDF"
+            >
+              <Download className="w-4 h-4" />
+              Download Research Paper
+            </a>
           </motion.div>
 
           {/* Research Scope */}

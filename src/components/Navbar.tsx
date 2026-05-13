@@ -8,7 +8,6 @@ import { Moon, Sun, Menu, X, Shield } from "lucide-react";
 const navLinks = [
   { label: "Research", href: "#research" },
   { label: "Team", href: "#team" },
-  { label: "Paper", href: "#paper" },
   { label: "Contact", href: "#contact" },
 ];
 
